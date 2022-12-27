@@ -1,19 +1,17 @@
-package Company;
+package Validation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class EmpDao {
-	
-	public List<Emp> getEmployeesList (){
-		List<Emp> p = new ArrayList<>();
-		p.add(new Emp(10, "Arun", 10000));
-		p.add(new Emp(18, "Anu", 10000));
-		p.add(new Emp(103, "Hari", 90000));
+
+	public List<Employee> getEmployeesList (){
+		List<Employee> emp = new ArrayList<>();
+		emp.add(new Employee("Anu", "ASDFG1234R"));
+		emp.add(new Employee("Arun","K89000"));
+		emp.add(new Employee("Hari","Tjk9090989"));
 		
-		return p;
+		return emp;
 		
 	}
 
