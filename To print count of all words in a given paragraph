@@ -1,0 +1,23 @@
+package Count;
+
+import java.util.HashMap;
+
+public class Sort {
+	
+	public static void main(String[] args) {
+		
+     String s = "This School is my my school";
+     HashMap<String,Integer> mapCount = new HashMap<String,Integer>();
+     String[] words= s.split(" ");
+     
+     for(String w: words) {
+    	 String lower = w.toLowerCase();
+    	 if(mapCount.containsKey(lower)) {
+    		 mapCount.put(lower, mapCount.get(lower) +1);
+    	 }
+    	 else {
+    		 mapCount.put(lower,1);
+    	 }}
+     System.out.println(mapCount);
+    
+}}
