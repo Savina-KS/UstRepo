@@ -1,0 +1,80 @@
+package Employee;
+
+import java.util.List;
+
+public class Sort {
+	public static void main(String[] args) {
+
+		List<Model> list = new EmployeeDao().getEmployees();
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = i + 1; j < list.size(); j++) {
+				if (list.get(i).getId() > list.get(j).getId()) {
+					Model tmp = list.get(i);
+					list.set(i, list.get(j));
+					list.set(j, tmp);
+
+				}
+			}
+		}
+
+		System.out.println(list);
+
+	}
+}
+
+package Employee;
+
+public class Model {
+	
+	private int id;
+	private String name;
+	private String location;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
+	public Model(int id, String name, String location) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.location = location;
+	}
+	@Override
+	public String toString() {
+		return " [id=" + id + ", name=" + name + ", location=" + location + "]";
+	}
+}
+
+package Employee;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeDao {
+	
+	public List<Model> getEmployees(){
+		List<Model> emp = new ArrayList<>();
+		emp.add(new Model(11,"Anu","TVM"));
+		emp.add(new Model(1,"Arun","Kochi"));
+		emp.add(new Model(17,"Hari","TVM"));
+		emp.add(new Model(-1,"Hari","TVM"));
+		return emp;
+	}
+}
+
